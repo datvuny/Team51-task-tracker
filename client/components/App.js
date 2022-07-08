@@ -4,6 +4,7 @@ import Todos from './Todos';
 import CreateTodo from './CreateTodo';
 import { connect } from 'react-redux';
 import { fetchTodos } from '../store/todos';
+import EditTodo from './EditTodo';
 
 class App extends Component {
   componentDidMount() {
@@ -21,6 +22,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={Todos} />
             <Route path='/todos/create' component={CreateTodo} />
+            <Route path='/todos/:id' component={EditTodo} />
           </Switch>
         </div>
       </Router>

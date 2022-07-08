@@ -11,24 +11,32 @@ class CreateTodo extends Component {
       assignee: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this)
+  }
+
+  handleChange(evt) {
+    this.setState({
+      [evt.target.name]: evt.target.value
+    })
   }
 
   handleSubmit(evt) {
     evt.preventDefault();
+    
     this.props.createTodo({ ...this.state });
   }
 
   render() {
     const { assignee, taskName } = this.state;
     const { handleSubmit } = this;
-
+    console.log('********', this.props)
     return (
       <form id='todo-form' onSubmit={handleSubmit}>
         <label htmlFor='taskName'>Task Name:</label>
-        <input name='taskName' value={taskName} />
+        <input name='taskName' onChange={this.handleChange} value={taskName} />
 
         <label htmlFor='assignee'>Assign To:</label>
-        <input name='assignee' value={assignee} />
+        <input name='assignee' onChange={this.handleChange} value={assignee} />
 
         <button type='submit'>Submit</button>
         <Link to='/'>Cancel</Link>

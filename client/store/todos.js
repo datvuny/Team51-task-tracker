@@ -46,6 +46,13 @@ export const fetchTodos = () => {
   };
 };
 
+export const deleteTodos = (id) => {
+  return async (dispatch) => {
+    const { data: todos } = await axios.delete(`/api/todos/${id}`);
+    dispatch(_deleteTodo(todos));
+  };
+};
+
 export default (state = [], action) => {
   switch (action.type) {
     case SET_TODOS:
