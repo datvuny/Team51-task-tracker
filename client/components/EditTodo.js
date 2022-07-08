@@ -13,7 +13,6 @@ class EditTodo extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    console.log('#$#$$#$$#$$', this.props.taskName)
   }
 
   componentDidMount() {
@@ -22,7 +21,6 @@ class EditTodo extends React.Component {
   }
 
   componentDidUpdate(prevProps){
-    // console.log(prevProps)
     if(prevProps.taskName !== this.props.taskName){
       this.setState({ taskName: this.props.todo.taskName });
     }
