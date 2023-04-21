@@ -35,7 +35,7 @@ class CreateTodo extends Component {
         <label htmlFor='taskName'>Task Name:</label>
         <input name='taskName' onChange={this.handleChange} value={taskName} />
 
-        <label htmlFor='assignee'>Assign To:</label>
+        <label htmlFor='assignee'>User Due Date:</label>
         <input name='assignee' onChange={this.handleChange} value={assignee} />
 
         <button type='submit'>Submit</button>

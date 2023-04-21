@@ -11,7 +11,7 @@ const Todos = ({ todos }) => {
             <h2>
               <Link to={`/todos/${todo.id}`}>Task: {todo.taskName}</Link>
             </h2>
-            <p>assigned by {todo.assignee}</p>
+            <p>User Due Date{todo.assignee}</p>
           </li>
         );
       })}

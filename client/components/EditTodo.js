@@ -22,6 +22,7 @@ class EditTodo extends React.Component {
 
   componentDidUpdate(prevProps){
     if(prevProps.taskName !== this.props.taskName){
+        console.log('***Component is Updating***')
       this.setState({ taskName: this.props.todo.taskName });
     }
   }
@@ -46,14 +47,14 @@ class EditTodo extends React.Component {
     return (
       <div>
         <form id="todo-form" onSubmit={handleSubmit}>
-          <label htmlFor="taskName">Task Name:</label>
+          <label htmlFor="taskName">Task Title:</label>
           <input
             name="taskName"
             onChange={this.handleChange}
             value={taskName}
           />
 
-          <label htmlFor="assignee">Assign To:</label>
+          <label htmlFor="assignee">Description:</label>
           <input
             name="assignee"
             onChange={this.handleChange}

@@ -16,9 +16,9 @@ class App extends Component {
       <Router>
         <div id='main'>
           <h1>
-            <Link to='/'>Todos ({this.props.todos.length})</Link>
+            <Link to='/'>Tasks ({this.props.todos.length})</Link>
           </h1>
-          <Link to='/todos/create'>Create A New Todo</Link>
+          <Link to='/todos/create'>Create A New Task</Link>
           <Switch>
             <Route exact path='/' component={Todos} />
             <Route path='/todos/create' component={CreateTodo} />
